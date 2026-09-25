@@ -1,2 +1,1 @@
-## 🔗 Live Demo
-[Click here to try the app](https://your-app-name.streamlit.app)
+
