@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mental Health Signal — Awwwards-Grade Student Wellness Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body data-accent="cyber">
+
+<!-- Interactive Canvas for Floating Neural Particle Synapses -->
+<canvas id="ambient-canvas"></canvas>
+
+<!-- Interactive Cursor Spotlight -->
+<div class="cursor-spotlight" id="cursor-spotlight" aria-hidden="true"></div>
+
+<!-- Ambient Aurora Glow Orbs -->
+<div class="aurora-orb aurora-primary" aria-hidden="true"></div>
+<div class="aurora-orb aurora-secondary" aria-hidden="true"></div>
+<div class="aurora-orb aurora-tertiary" aria-hidden="true"></div>
+
+<div class="site-wrapper">
+
+  <!-- TOP BAR: COLOR SCHEME SWITCHER & QUICK DEMO -->
+  <nav class="top-nav-bar">
+    <div class="nav-container">
+      
+      <!-- Palette Switcher -->
+      <div class="palette-group">
+        <span class="palette-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24"/></svg>
+          Color Palette:
+        </span>
+        <div class="palette-buttons">
+          <button type="button" class="palette-btn active" data-color="cyber">
+            <span class="p-dot dot-cyber"></span>
+            <span>Cyber Violet</span>
+          </button>
+          <button type="button" class="palette-btn" data-color="mint">
+            <span class="p-dot dot-mint"></span>
+            <span>Electric Mint</span>
+          </button>
+          <button type="button" class="palette-btn" data-color="sunset">
+            <span class="p-dot dot-sunset"></span>
+            <span>Velvet Amber</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Demo Presets -->
+      <div class="demo-group">
+        <span class="demo-label">Autofill:</span>
+        <button type="button" class="demo-chip" data-preset="balanced">
+          <span>🧘</span> Balanced Baseline
+        </button>
+        <button type="button" class="demo-chip" data-preset="strain">
+          <span>📱</span> High Strain
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- AWWWARDS-STYLE SITE HEADER -->
+  <header class="hero-header">
+    <div class="hero-inner">
+      <div class="live-status-badge">
+        <span class="beacon-dot"></span>
+        <span class="beacon-text">Random Forest Regressor • Live Engine</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Mental Health <span class="gradient-text">Signal</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Predictive student wellness analytics modeled from your daily digital habits, screen exposure, and circadian rest rhythm.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN TWO-COLUMN LAYOUT -->
+  <main class="main-layout">
+
+    <!-- LEFT: CLEAN ORIGINAL FORM WITH SUBTLE GLOW CARDS -->
+    <section class="glass-card form-container">
+      <form id="predict-form" novalidate autocomplete="off">
+
+        <!-- 01 PROFILE -->
+        <fieldset class="form-fieldset">
+          <legend class="fieldset-legend">
+            <span class="legend-num">01</span>
+            <span class="legend-title">Student Profile</span>
+          </legend>
+
+          <div class="form-grid grid-3">
+            
+            <div class="form-field">
+              <label for="age">Age</label>
+              <div class="input-wrap">
+                <input type="number" id="age" name="age" min="10" max="100" step="1" required placeholder="e.g. 21" />
+                <span class="input-hint-badge">10–100</span>
+              </div>
+              <span class="field-error" data-for="age"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="gender">Gender</label>
+              <div class="select-wrap">
+                <select id="gender" name="gender" required>
+                  <option value="" disabled selected hidden>Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <span class="field-error" data-for="gender"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="country">Country</label>
+              <div class="input-wrap">
+                <input type="text" id="country" name="country" list="country-list" required placeholder="e.g. Pakistan" />
+                <datalist id="country-list">
+                  <option value="Pakistan"></option>
+                  <option value="USA"></option>
+                  <option value="Canada"></option>
+                  <option value="Australia"></option>
+                  <option value="UK"></option>
+                  <option value="Germany"></option>
+                  <option value="Mexico"></option>
+                  <option value="Turkey"></option>
+                  <option value="France"></option>
+                  <option value="Other"></option>
+                </datalist>
+              </div>
+              <span class="field-error" data-for="country"></span>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- 02 DIGITAL HABITS -->
+        <fieldset class="form-fieldset">
+          <legend class="fieldset-legend">
+            <span class="legend-num">02</span>
+            <span class="legend-title">Digital &amp; Academic Habits</span>
+            <span class="legend-badge">67.5% Screen Weight</span>
+          </legend>
+
+          <div class="form-grid grid-2">
+            
+            <div class="form-field">
+              <label for="academic_level">Academic Level</label>
+              <div class="select-wrap">
+                <select id="academic_level" name="academic_level" required>
+                  <option value="" disabled selected hidden>Select Level</option>
+                  <option value="High School">High School</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Graduate">Graduate</option>
+                </select>
+              </div>
+              <span class="field-error" data-for="academic_level"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="most_used_platform">Most-Used Social Platform</label>
+              <div class="select-wrap">
+                <select id="most_used_platform" name="most_used_platform" required>
+                  <option value="" disabled selected hidden>Select Platform</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="TikTok">TikTok</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Twitter">Twitter / X</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Snapchat">Snapchat</option>
+                  <option value="WeChat">WeChat</option>
+                  <option value="LINE">LINE</option>
+                  <option value="KakaoTalk">KakaoTalk</option>
+                  <option value="VKontakte">VKontakte</option>
+                </select>
+              </div>
+              <span class="field-error" data-for="most_used_platform"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="purpose_of_use">Primary Purpose of Use</label>
+              <div class="select-wrap">
+                <select id="purpose_of_use" name="purpose_of_use" required>
+                  <option value="" disabled selected hidden>Select Purpose</option>
+                  <option value="Education">Education</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Networking">Networking</option>
+                  <option value="News">News</option>
+                </select>
+              </div>
+              <span class="field-error" data-for="purpose_of_use"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="avg_daily_usage_hours">Avg. Daily Screen Time</label>
+              <div class="input-wrap unit-wrap">
+                <input type="number" id="avg_daily_usage_hours" name="avg_daily_usage_hours" min="0" max="24" step="0.1" required placeholder="3.5" />
+                <span class="unit-suffix">hrs/day</span>
+              </div>
+              <span class="field-error" data-for="avg_daily_usage_hours"></span>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="daily_unlocks">Daily Phone Unlocks / Checks</label>
+              <div class="input-wrap unit-wrap">
+                <input type="number" id="daily_unlocks" name="daily_unlocks" min="0" max="500" step="1" required placeholder="e.g. 50" />
+                <span class="unit-suffix">unlocks</span>
+              </div>
+              <span class="field-error" data-for="daily_unlocks"></span>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- 03 LIFESTYLE & RECOVERY -->
+        <fieldset class="form-fieldset">
+          <legend class="fieldset-legend">
+            <span class="legend-num">03</span>
+            <span class="legend-title">Lifestyle, Rest &amp; Stress</span>
+          </legend>
+
+          <div class="form-grid grid-3">
+            
+            <div class="form-field">
+              <label for="study_hours">Daily Study Hours</label>
+              <div class="input-wrap unit-wrap">
+                <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.1" required placeholder="4.0" />
+                <span class="unit-suffix">hrs</span>
+              </div>
+              <span class="field-error" data-for="study_hours"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="physical_activity_hours">Physical Activity</label>
+              <div class="input-wrap unit-wrap">
+                <input type="number" id="physical_activity_hours" name="physical_activity_hours" min="0" max="24" step="0.1" required placeholder="1.0" />
+                <span class="unit-suffix">hrs</span>
+              </div>
+              <span class="field-error" data-for="physical_activity_hours"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="sleep_hours_per_night">Nightly Sleep</label>
+              <div class="input-wrap unit-wrap">
+                <input type="number" id="sleep_hours_per_night" name="sleep_hours_per_night" min="0" max="24" step="0.1" required placeholder="7.5" />
+                <span class="unit-suffix">hrs</span>
+              </div>
+              <span class="field-error" data-for="sleep_hours_per_night"></span>
+            </div>
+
+            <div class="form-field form-field-full" style="margin-top: 6px;">
+              <label>Perceived Subjective Stress</label>
+              <div class="segmented-control" id="stress_level_group">
+                <button type="button" class="seg-item" data-value="Low">
+                  <span class="seg-dot dot-low"></span>
+                  <span class="seg-title">Low</span>
+                </button>
+                <button type="button" class="seg-item active" data-value="Medium">
+                  <span class="seg-dot dot-med"></span>
+                  <span class="seg-title">Medium</span>
+                </button>
+                <button type="button" class="seg-item" data-value="High">
+                  <span class="seg-dot dot-high"></span>
+                  <span class="seg-title">High</span>
+                </button>
+                <button type="button" class="seg-item" data-value="Very High">
+                  <span class="seg-dot dot-vhigh"></span>
+                  <span class="seg-title">Very High</span>
+                </button>
+              </div>
+              <input type="hidden" id="stress_level" name="stress_level" value="Medium" required />
+              <span class="field-error" data-for="stress_level"></span>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- AWWWARDS ACTION BUTTON -->
+        <div class="action-row">
+          <button type="submit" class="glow-submit-btn" id="submit-btn">
+            <span class="shimmer-fx" aria-hidden="true"></span>
+            <span class="btn-text">Compute Wellness Signal</span>
+            <span class="btn-arrow">→</span>
+            <div class="btn-loader" aria-hidden="true"></div>
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- RIGHT: AWWWARDS HUD COCKPIT GAUGE -->
+    <aside class="glass-card result-container" aria-live="polite">
+      <div class="cockpit-inner">
+
+        <!-- IDLE STATE -->
+        <div class="hud-state state-idle" id="state-idle">
+          <div class="idle-radar-ring">
+            <div class="radar-scan-line"></div>
+            <div class="radar-center-dot"></div>
+          </div>
+          <h2 class="idle-title">Ready for Assessment</h2>
+          <p class="idle-text">Enter your parameters or click an autofill preset above, then compute your predicted mental health score.</p>
+        </div>
+
+        <!-- LOADING STATE -->
+        <div class="hud-state state-loading" id="state-loading" hidden>
+          <div class="pulse-orbital">
+            <div class="orbital-track track-1"></div>
+            <div class="orbital-track track-2"></div>
+            <div class="orbital-core"></div>
+          </div>
+          <h2 class="loading-title">Synthesizing Neural Rhythms…</h2>
+          <p class="loading-sub">Running inference via Random Forest regressor.</p>
+        </div>
+
+        <!-- RESULT STATE -->
+        <div class="hud-state state-result" id="state-result" hidden>
+          
+          <div class="gauge-frame">
+            <svg class="hud-gauge-svg" viewBox="0 0 260 170" aria-hidden="true">
+              <defs>
+                <linearGradient id="hudGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="var(--gauge-start, #F43F5E)"/>
+                  <stop offset="45%" stop-color="var(--gauge-mid, #F59E0B)"/>
+                  <stop offset="100%" stop-color="var(--gauge-end, #00F59B)"/>
+                </linearGradient>
+                <filter id="neonHalo" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <path class="gauge-back-track" d="M 30 145 A 100 100 0 0 1 230 145" />
+              <path class="gauge-glow-arc" id="gauge-fill" d="M 30 145 A 100 100 0 0 1 230 145" filter="url(#neonHalo)" />
+              <g class="gauge-ticks" id="gauge-ticks"></g>
+            </svg>
+
+            <!-- Digital Readout Center -->
+            <div class="score-center-readout">
+              <div class="score-core-num">
+                <span class="num-digits" id="score-number">0.00</span>
+                <span class="num-scale">/10</span>
+              </div>
+              <div class="signal-pill" id="signal-pill">
+                <span class="pill-dot"></span>
+                <span class="pill-name" id="score-band">Optimal Balance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="narrative-box">
+            <p class="narrative-content" id="score-context">
+              Your daily rhythm points to a well-supported student baseline with sustainable digital habits.
+            </p>
+          </div>
+
+          <!-- Factor Telemetry Cards -->
+          <div class="telemetry-grid">
+            <div class="telemetry-card">
+              <span class="t-label">Screen Exposure</span>
+              <span class="t-val" id="hl-screen">3.5h</span>
+            </div>
+            <div class="telemetry-card">
+              <span class="t-label">Sleep Restoration</span>
+              <span class="t-val" id="hl-sleep">7.5h</span>
+            </div>
+            <div class="telemetry-card">
+              <span class="t-label">Device Unlocks</span>
+              <span class="t-val" id="hl-unlocks">50</span>
+            </div>
+          </div>
+
+          <button type="button" class="retest-btn" id="reset-btn">
+            <span>↺</span> Recalculate Signal
+          </button>
+
+        </div>
+
+        <!-- ERROR STATE -->
+        <div class="hud-state state-error" id="state-error" hidden>
+          <div class="error-disc">!</div>
+          <h2 class="error-title" id="error-label">Inference Failed</h2>
+          <p class="error-msg" id="error-copy">Unable to connect to the backend server.</p>
+          <button type="button" class="retest-btn" id="error-retry-btn">Try Again</button>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>MindPulse Student Wellness Intelligence • Powered by Scikit-Learn Random Forest Regression • Informational Only</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
